@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle Construction</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+        /* Custom Color Palette */
+        :root {
+            --text-dark: #1e3d59;
+            --text-light: #00bfa6;
+            --text-fent: #e21743db;
+            --bg-main: #ffffff;
+            --bg-light: #ffffff;
+            --text-blue: #4ed4f6;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+  /* Navbar */
+  .nav-item{
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: var(--text-blue);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+  }
+  .hero-section .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  .hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 61, 89, 0.5); /* based on --text-dark */
+    z-index: -1;
+  }
+  .hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-blue);
+    animation: fadeInDown 1s ease-out;
+  }
+  .hero-content h6 {
+    font-size: 1.7rem;
+    color: var(--text-fent);
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Gallery */
+  .project-gallery img {
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .project-gallery img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Modal */
+  .modal-content {
+    border-radius: 10px;
+    background-color: var(--bg-light);
+  }
+  
+  /* Buttons */
+  .btn-outline-dark {
+    color: var(--text-dark);
+    border-color: var(--text-fent);
+  }
+  .btn-outline-dark:hover,
+  .btn-outline-dark.active {
+    background-color: var(--text-fent);
+    color: white;
+    border-color: var(--text-fent);
+  }
+  
+  .btn-warning {
+    background-color: var(--text-fent);
+    border-color: var(--text-fent);
+    color: #fff;
+  }
+  .btn-warning:hover {
+    background-color: var(--text-fent);
+    border-color: var(--text-fent);
+  }
+  
+  
+  
+  
+  
+  .contact-modal {
+    border-radius: 12px;
+    background-color: var(--bg-light);
+    animation: fadeInZoom 0.4s ease-out;
+  }
+  
+  .contact-modal .modal-header {
+    background-color: var(--text-fent);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  .contact-modal .modal-body {
+    padding: 20px;
+  }
+  
+  .contact-modal .form-label {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+  
+  .contact-modal .form-control {
+    border-radius: 8px;
+    border: 1px solid var(--text-blue);
+    transition: border 0.3s ease;
+  }
+  
+  .contact-modal .form-control:focus {
+    border-color: var(--text-fent);
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+  }
+  
+  .contact-modal .btn-primary {
+    background-color: var(--text-fent);
+    border-color: var(--text-fent);
+  }
+  .contact-modal .btn-primary:hover {
+    background-color: var(--text-fent);
+  }
+  
+  /* Animation */
+  @keyframes fadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+        /* Social links styling */
+        .social-links a {
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 61, 89, 0.8), rgba(30, 61, 89, 0.8)), 
+                        url('../images/our-services-banner.jpg') center/cover no-repeat;
+            color: white;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            color: var(--text-blue);
+        }
+
+        /* Service Cards */
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card .card-img-top {
+            transition: transform 0.3s ease;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .service-card .card-body {
+            padding: 25px;
+        }
+
+        .service-card .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .service-card .list-unstyled i {
+            margin-right: 10px;
+            color: var(--text-light);
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--bg-main);
+            padding: 80px 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step-number {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: var(--text-light);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .process-step-number {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .process-step h4 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--text-dark), #2c4668);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta a{
+            background-color: var(--text-fent);
+            color: white;
+        }
+        .cta a:hover{
+            background-color: white;
+            color: var(--text-fent);
+        }
+
+        @keyframes ctaTexture {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .process-step {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: var(--text-fent);
+            border-color: var(--text-fent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--text-fent);
+            border-color: var(--text-fent);
+        }
+
+        .btn-outline-primary {
+            color: var(--text-fent);
+            border-color: var(--text-fent);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--text-fent);
+            border-color: var(--text-fent);
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: var(--text-fent);
+            border-color: var(--text-fent);
+        }
+
+        .btn-danger:hover {
+            background-color: var(--text-fent);
+            border-color: var(--text-fent);
+        }
+
+
+            /* footer section */
+    .foot {
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      min-height: 9vh;
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+  }
+
+  .footer {
+    background: linear-gradient(135deg, var(--text-dark), var(--text-blue));
+      position: relative;
+      overflow: hidden;
+  }
+
+  .footer::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: var(--text-dark);
+      clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  .footer-top {
+      padding: 80px 0 40px;
+  }
+
+  .footer-bottom {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+  }
+
+  .footer-logo {
+      margin-bottom: 25px;
+      transition: var(--transition);
+  }
+
+  .footer-logo img {
+      height: 50px;
+      transition: var(--transition);
+  }
+
+  .footer-logo:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+  }
+
+  .footer-heading {
+      color: var(--bg-light);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+  }
+
+  .footer-heading::after {
+
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 40px;
+      height: 3px;
+      background-color: var(--text-fent);
+      transition: var(--transition);
+  }
+
+  .footer-col:hover .footer-heading::after {
+      width: 60px;
+  }
+
+  .footer-text {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      line-height: 1.8;
+  }
+
+  .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .footer-links li {
+      margin-bottom: 12px;
+  }
+
+  .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      padding-left: 15px;
+      display: block;
+  }
+
+  .footer-links a::before {
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background-color: var(--text-fent);
+      border-radius: 50%;
+      opacity: 0;
+      transition: var(--transition);
+  }
+
+  .footer-links a:hover {
+      color: var(--text-fent);
+      padding-left: 20px;
+  }
+
+  .footer-links a:hover::before {
+      opacity: 1;
+  }
+
+  .footer-contact-info {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .footer-contact-info li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.7);
+  }
+
+ .footer-contact-info .icons{
+        color:var(--text-fent);
+        margin-top: 4px;
+        margin-right: 10px;
+        font-size: 18px;
+        transition: var(--transition);
+
+    }
+
+  .footer-contact-info li:hover .icons {
+      transform: scale(1.2);
+  }
+
+  .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+  }
+
+  .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--bg-light);
+      font-size: 16px;
+      transition: var(--transition);
+  }
+
+  .social-links a:hover {
+      background-color: var(--text-fent);
+      transform: translateY(-5px);
+  }
+
+  /* Special hover effects for each social media */
+  #facebook:hover {
+      background-color: #3b5998;
+      box-shadow: 0 0 15px #3b5998;
+  }
+
+  #twitter:hover {
+      background-color: #1da1f2;
+      box-shadow: 0 0 15px #1da1f2;
+  }
+
+  #instagram:hover {
+      background-color: #e1306c;
+      box-shadow: 0 0 15px #e1306c;
+  }
+
+  #linkedin:hover {
+      background-color: #0077b5;
+      box-shadow: 0 0 15px #0077b5;
+  }
+
+  .newsletter-form {
+      position: relative;
+      margin-top: 20px;
+  }
+
+  .newsletter-input {
+      width: 100%;
+      padding: 14px 60px 14px 20px;
+      border: none;
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--bg-light);
+      transition: var(--transition);
+  }
+
+  .newsletter-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+  }
+
+  .newsletter-input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: var(--shadow-md);
+  }
+
+  .newsletter-btn {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background-color: var(--text-fent);
+      color: white;
+      border: none;
+      height: calc(100% - 10px);
+      width: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      cursor: pointer;
+  }
+
+  .newsletter-btn:hover {
+      background-color: var(--text-fent);
+      transform: scale(1.05);
+  }
+
+  .copyright {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin: 0;
+      font-size: 14px;
+  }
+
+  .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+      margin: 30px 0;
+  }
+
+  .back-to-top {
+      position: fixed;
+      bottom: 85px;
+      right: 30px;
+      background-color: var(--text-fent);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: var(--transition);
+      z-index: 100;
+      cursor: pointer;
+  }
+
+  .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      background-color: var(--text-dark);
+  }
+
+  .back-to-top:hover {
+      background-color: var(--text-fent);
+      transform: translateY(-5px);
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: var(--shadow-md);
+      z-index: 100;
+      cursor: pointer;
+      transition: var(--transition);
+  }
+
+  .whatsapp-button:hover {
+      background-color: #128c7e;
+      transform: scale(1.1);
+  }
+
+  .whatsapp-button i {
+      font-size: 30px;
+  }
+
+  .footer-widget {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      transform: translateY(50px);
+      opacity: 0;
+  }
+
+  .footer-widget.animated {
+      transform: translateY(0);
+      opacity: 1;
+  }
+
+  /* Animation Classes */
+  .fadeInUp {
+      animation-name: fadeInUp;
+  }
+
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translate3d(0, 50px, 0);
+      }
+
+      to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+      }
+  }
+
+  .fadeIn {
+      animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+
+      to {
+          opacity: 1;
+      }
+  }
+
+  /* Wave animation */
+  .wave-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+  }
+
+  .wave {
+      position: relative;
+      width: 100%;
+      height: 50px;
+  }
+
+  .wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 50px;
+      animation: waveAnimation 15s linear infinite;
+  }
+
+  @keyframes waveAnimation {
+      0% {
+          transform: translateX(0);
+      }
+
+      50% {
+          transform: translateX(-25%);
+      }
+
+      100% {
+          transform: translateX(0);
+      }
+  }
+
+  .wave .shape-fill {
+      fill: #ffffff9a;
+  }
+
+  /* Pulse animation for social links */
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+      }
+
+      70% {
+          transform: scale(1.1);
+          box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+      }
+
+      100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+      }
+  }
+
+  .pulse {
+      animation: pulse 2s infinite;
+  }
+
+  /* Improved mobile styling */
+  @media (max-width: 991px) {
+      .footer-col {
+          margin-bottom: 40px;
+      }
+
+      .footer-widget {
+          transform: translateY(30px);
+      }
+
+      .wave {
+          height: 40px;
+      }
+
+      .wave svg {
+          height: 40px;
+      }
+  }
+
+  @media (max-width: 767px) {
+      .footer-col {
+          margin-bottom: 30px;
+      }
+
+      .footer-top {
+          padding: 60px 0 20px;
+      }
+
+      .text-md-end,
+      .text-md-right {
+          text-align: center;
+      }
+
+      .wave {
+          height: 30px;
+      }
+
+      .wave svg {
+          height: 30px;
+      }
+
+      .back-to-top {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          bottom: 90px;
+          right: 30px;
+      }
+
+      .social-links {
+          justify-content: center;
+      }
+
+      .footer-heading {
+          text-align: center;
+      }
+
+      .footer-heading::after {
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      .footer-col:hover .footer-heading::after {
+          width: 60px;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      .footer-text {
+          text-align: center;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .social-links {
+          gap: 8px;
+      }
+
+      .social-links a {
+          width: 35px;
+          height: 35px;
+          font-size: 14px;
+      }
+
+      .wave {
+          height: 25px;
+      }
+
+      .wave svg {
+          height: 25px;
+      }
+  }
+
+
+  /* Mobile Footer Alignment Fixes */
+@media (max-width: 767.98px) {
+  /* Align all footer columns to start on mobile */
+  .footer-col {
+    text-align: left;
+  }
+  
+  /* Fix for footer widgets */
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  
+  /* Align logo and text to left */
+  .footer-logo, .footer-text {
+    text-align: left;
+  }
+  
+  /* Fix social links alignment */
+  .social-links {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust contact info alignment */
+  .footer-contact-info li {
+    text-align: left;
+  }
+  
+  /* Fix newsletter form */
+  .newsletter-form {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  /* Fix copyright section */
+  .copyright {
+    text-align: left !important;
+    margin-bottom: 10px;
+  }
+  
+  /* Fix the text-md-end class on mobile */
+  .text-md-end {
+    text-align: left !important;
+  }
+  
+  /* Add a bit more space between footer sections */
+  .footer-top .row > [class^="col-"] {
+    margin-bottom: 15px;
+  }
+}
+
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../images/logo1.png" alt="pinnacle" height="50">
+      </div>
+
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link " href="../html/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../html/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../html/services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="../html/project.html">Project Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="../html/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Right Side Elements - Hidden on mobile (visible only on md screens and up) -->
+      <div class="d-none d-md-flex align-items-center">
+        <!-- Request Button -->
+        <button type="button" class="btn btn-danger me-3" data-bs-toggle="modal" data-bs-target="#siteVisitModal">
+          REQUEST A SITE VISIT
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Site Visit Modal -->
+  <div class="modal fade" id="siteVisitModal" tabindex="-1" aria-labelledby="siteVisitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content contact-modal">
+        <div class="modal-header">
+          <h5 class="modal-title" id="siteVisitModalLabel">Request A Site Visit</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="visitForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Full Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Your Contact No</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Your Contact No." required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Enter message..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-danger w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="animate-in mb-4">Our Services</h1>
+                    <p class="lead mb-4 animate-in">Building excellence with innovation, quality, and precision for over two decades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services py-5">
+        <div class="container">
+            <div class="text-center mb-5 animate-in">
+                <h2 class="mb-3" style="color: var(--text-dark);">What We Offer</h2>
+                <h5 class="text-muted">At Pinnacle Construction, we deliver comprehensive construction solutions tailored to your specific needs, ensuring quality, timeliness, and client satisfaction.</h5>
+            </div>
+
+            <div class="row">
+                <!-- Residential Construction -->
+                <div class="col-md-4">
+                    <div class="card service-card animate-in">
+                        <img src="../images/Residential-Construction.jpg" class="card-img-top" alt="Residential Construction">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--text-dark);">Residential Construction</h5>
+                            <p class="card-text">We build dream homes that combine aesthetic appeal with functional living spaces, tailored to your lifestyle and preferences.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check"></i>Custom Home Building</li>
+                                <li><i class="fas fa-check"></i>Home Additions & Renovations</li>
+                                <li><i class="fas fa-check"></i>Luxury Home Construction</li>
+                                <li><i class="fas fa-check"></i>Sustainable & Energy-Efficient Homes</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Buildings -->
+                <div class="col-md-4">
+                    <div class="card service-card animate-in">
+                        <img src="../images/Commercial-Construction.jpg" class="card-img-top" alt="Commercial Buildings">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--text-dark);">Commercial Buildings</h5>
+                            <p class="card-text">From office spaces to retail outlets, we construct commercial buildings that enhance business operations and create lasting impressions.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check"></i>Office Building Construction</li>
+                                <li><i class="fas fa-check"></i>Retail & Restaurant Spaces</li>
+                                <li><i class="fas fa-check"></i>Warehouses & Industrial Facilities</li>
+                                <li><i class="fas fa-check"></i>Healthcare & Educational Buildings</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redevelopment Projects -->
+                <div class="col-md-4">
+                    <div class="card service-card animate-in">
+                        <img src="../images/Residential-Construction.jpg" class="card-img-top" alt="Redevelopment Projects">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--text-dark);">Redevelopment Projects</h5>
+                            <p class="card-text">We transform existing structures into modern, functional spaces while preserving architectural heritage and maximizing value.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check"></i>Historic Building Restoration</li>
+                                <li><i class="fas fa-check"></i>Property Repurposing</li>
+                                <li><i class="fas fa-check"></i>Urban Renewal Projects</li>
+                                <li><i class="fas fa-check"></i>Mixed-Use Development</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="text-center mb-5 animate-in">
+                <h2 class="mb-3" style="color: var(--text-dark);">Our Process</h2>
+                <p class="text-muted">We follow a systematic approach to ensure successful project delivery from conception to completion.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 process-step animate-in">
+                    <div class="process-step-number">1</div>
+                    <h4>Consultation</h4>
+                    <p class="text-muted">We discuss your vision, requirements, and budget to understand your project needs.</p>
+                </div>
+
+                <div class="col-md-3 process-step animate-in">
+                    <div class="process-step-number">2</div>
+                    <h4>Planning</h4>
+                    <p class="text-muted">Our experts develop detailed plans, designs, and project timelines.</p>
+                </div>
+
+                <div class="col-md-3 process-step animate-in">
+                    <div class="process-step-number">3</div>
+                    <h4>Construction</h4>
+                    <p class="text-muted">We execute the project with precision, quality materials, and skilled craftsmanship.</p>
+                </div>
+
+                <div class="col-md-3 process-step animate-in">
+                    <div class="process-step-number">4</div>
+                    <h4>Delivery</h4>
+                    <p class="text-muted">Final inspections are conducted before we hand over your completed project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="display-4 mb-4">Ready to Start Your Project?</h2>
+                    <p class="lead mb-4">Contact us today for a free consultation and estimate. Let's bring your vision to life with Pinnacle Construction.</p>
+                    <a href="../html/contact.html" class="btn btn-light btn-lg px-5 py-3">Contact Us Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer foot" id="footer">
+      <div class="wave-container">
+          <div class="wave">
+              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                  preserveAspectRatio="none">
+                  <path
+                      d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                      class="shape-fill"></path>
+              </svg>
+          </div>
+      </div>
+
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="100">
+                          <div class="footer-logo">
+                              <img src="../images/logo1.png" alt="Logo">
+                          </div>
+                          <p class="footer-text">We build more than just structures - we build your dreams into reality
+                              with precision, innovation, and unmatched craftsmanship.</p>
+                          <div class="social-links">
+                              <a href="#" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                              <a href="#" id="instagram"><i class="fab fa-instagram"></i></a>
+                              <a href="#" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="200">
+                          <h3 class="footer-heading">Quick Links</h3>
+                          <ul class="footer-links">
+                              <li><a href="#">About Us</a></li>
+                              <li><a href="#Service">Our Services</a></li>
+                              <li><a href="#projects">Our Projects</a></li>
+                              <li><a href="#testimonials">Testimonials</a></li>
+                              <li><a href="./contact.html">Contact Us</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="300">
+                          <h3 class="footer-heading">Services</h3>
+                          <ul class="footer-links">
+                              <li><a href="#">Residential Construction</a></li>
+                              <li><a href="#">Commercial Buildings</a></li>
+                              <li><a href="#">Redevelopment projects</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="400">
+                          <h3 class="footer-heading">Contact Info</h3>
+                          <ul class="footer-contact-info">
+                              <li>
+                                  <i class="fas fa-map-marker-alt icons"></i>
+                                  <span>PINNACLE CONSTRUCTION, MULIK COMPLEX, FLAT NO- A/1, NEAR AIRPORT CENTRE
+                                      POINT,WARDHA ROAD, SOMALWADA, NAGPUR.</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-phone-alt icons"></i>
+                                  <span>+91 7770020599 <br>+91 7775947600</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-envelope icons"></i>
+                                  <span>Pinnacleconstruction03@gmail.com</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-clock icons"></i>
+                                  <span>Mon - sat: 10:00 AM - 7:00 PM</span>
+                              </li>
+                          </ul>
+
+                          <div class="newsletter-form">
+                              <input type="email" class="newsletter-input" placeholder="Your email address">
+                              <button type="submit" class="newsletter-btn">
+                                  <i class="fas fa-paper-plane"></i>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="footer-divider"></div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <p class="copyright">© 2025 CapturousInfotech. All Rights Reserved.</p>
+                  </div>
+                  <div class="col-md-6 text-md-end">
+                      <p class="copyright">
+                          <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-right: 15px;">Privacy
+                              Policy</a>
+                          <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms of Service</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/917770020599" class="whatsapp-button" id="whatsapp">
+      <i class="bi bi-whatsapp"></i>
+  </a>
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Animation on Scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            animatedElements.forEach(element => {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Navbar shrink effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-shrink');
+                } else {
+                    navbar.classList.remove('navbar-shrink');
+                }
+            });
+        });
+
+
+                //footer section
+        document.addEventListener("DOMContentLoaded", function () {
+          // Footer animation
+          const footerWidgets = document.querySelectorAll('.footer-widget');
+          
+          function animateFooterWidgets() {
+              footerWidgets.forEach((widget, index) => {
+                  const delay = widget.getAttribute('data-delay') || 100 * index;
+                  const animation = widget.getAttribute('data-animation') || 'fadeInUp';
+                  
+                  setTimeout(() => {
+                      widget.classList.add('animated', animation);
+                  }, delay);
+              });
+          }
+          
+          // Back to top button functionality
+          const backToTopButton = document.querySelector('.back-to-top');
+          
+          function toggleBackToTopButton() {
+              if (window.scrollY > 300) {
+                  backToTopButton.classList.add('visible');
+              } else {
+                  backToTopButton.classList.remove('visible');
+              }
+          }
+          
+          backToTopButton.addEventListener('click', () => {
+              window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+              });
+          });
+          
+          // Handle scroll events
+          window.addEventListener('scroll', toggleBackToTopButton);
+          
+          // Animation on scroll
+          const animateElements = document.querySelectorAll('.animate-in');
+          
+          function checkIfInView() {
+              animateElements.forEach(element => {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const windowHeight = window.innerHeight;
+                  
+                  if (elementTop < windowHeight - 100) {
+                      element.classList.add('visible');
+                  }
+              });
+          }
+          
+          // Intersection Observer for footer animations
+          const footerObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      animateFooterWidgets();
+                      footerObserver.unobserve(entry.target);
+                  }
+              });
+          }, { threshold: 0.1 });
+          
+          const footer = document.getElementById('footer');
+          if (footer) {
+              footerObserver.observe(footer);
+          }
+          
+          // Social links hover effects
+          const socialLinks = document.querySelectorAll('.social-links a');
+          
+          socialLinks.forEach(link => {
+              link.addEventListener('mouseenter', function() {
+                  this.classList.add('pulse');
+              });
+              
+              link.addEventListener('mouseleave', function() {
+                  this.classList.remove('pulse');
+              });
+          });
+          
+          // Newsletter form submission
+          const newsletterForm = document.querySelector('.newsletter-form');
+          const newsletterInput = document.querySelector('.newsletter-input');
+          
+          if (newsletterForm) {
+              newsletterForm.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  
+                  const email = newsletterInput.value.trim();
+                  
+                  if (email.length > 0 && /^\S+@\S+\.\S+$/.test(email)) {
+                      // Success message with Bootstrap toast
+                      const successToast = document.createElement('div');
+                      successToast.className = 'position-fixed bottom-0 end-0 p-3';
+                      successToast.style.zIndex = '1050';
+                      successToast.innerHTML = `
+                          <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-header bg-success text-white">
+                                  <strong class="me-auto">Success!</strong>
+                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                              </div>
+                              <div class="toast-body">
+                                  Thank you for subscribing to our newsletter!
+                              </div>
+                          </div>
+                      `;
+                      document.body.appendChild(successToast);
+                      
+                      // Remove toast after 3 seconds
+                      setTimeout(() => {
+                          successToast.remove();
+                      }, 3000);
+                      
+                      newsletterInput.value = '';
+                  } else {
+                      // Error message with Bootstrap toast
+                      const errorToast = document.createElement('div');
+                      errorToast.className = 'position-fixed bottom-0 end-0 p-3';
+                      errorToast.style.zIndex = '1050';
+                      errorToast.innerHTML = `
+                          <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-header bg-danger text-white">
+                                  <strong class="me-auto">Error</strong>
+                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                              </div>
+                              <div class="toast-body">
+                                  Please enter a valid email address.
+                              </div>
+                          </div>
+                      `;
+                      document.body.appendChild(errorToast);
+                      
+                      // Remove toast after 3 seconds
+                      setTimeout(() => {
+                          errorToast.remove();
+                      }, 3000);
+                  }
+              });
+          }
+          
+          // Add smooth scrolling to all links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  
+                  const targetId = this.getAttribute('href');
+                  
+                  if (targetId !== '#') {
+                      const targetElement = document.querySelector(targetId);
+                      
+                      if (targetElement) {
+                          targetElement.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start'
+                          });
+                      }
+                  }
+              });
+          });
+          
+          // Initialize functionality
+          toggleBackToTopButton();
+          checkIfInView();
+          
+          // Re-check on scroll
+          window.addEventListener('scroll', checkIfInView);
+      });
+    </script>
+
+
+</body>
+</html>

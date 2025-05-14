@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle Constructions   </title>
+    <link rel="icon" type="image/x-icon" href="../images/fevicon.png" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+  
+    <style>
+        /* Custom CSS */
+        :root {
+            --text-dark: #1e3d59;          
+            --text-light: #00bfa6;  
+            --text-fent: #e21743;
+            --bg-main: #ffffff;             
+            --bg-light: #ffffff;
+            --text-blue: #4ed4f6;     
+            --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 15px 35px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --secondary-color: #1e3d59;
+            --light-gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header */
+.top-header {
+    background-color: var(--bg-light);
+  }
+  
+  .top-header .social-icons a {
+    font-size: 18px;
+    color: var(--text-dark);
+    transition: transform 0.3s;
+  }
+  .top-header .social-icons a:hover {
+    transform: scale(1.2);
+    color: var(--text-light);
+  }
+  
+  /* Navbar */
+  .nav-item{
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: var(--text-blue);
+  }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/contact.jpg');
+            background-size: cover;
+            background-position: center;
+            color:var(--text-blue);
+            padding: 100px 0;
+            position: relative;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 0;
+            color: #fff;
+
+        }
+
+        .contact-info-card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-card h5 {
+            color: var(--text-fent);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info-card p {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .contact-info-card a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info-card a:hover {
+            color: var(--text-light);
+        }
+
+        .form-section {
+            background-color: var(--light-gray);
+            padding: 40px 0;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .custom-btn {
+            background-color: var( --text-fent);
+            border: none;
+            padding: 10px 25px;
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .custom-btn:hover {
+            background-color: var(--primary-dark-btn);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .map-container {
+            height: 350px;
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .faq-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-header {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-header h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            background-color: var(--text-light);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-body {
+            padding: 15px 20px;
+            display: none;
+        }
+
+        .services-section {
+            padding: 40px 0;
+            background-color: var(--light-gray);
+        }
+
+        .service-icon {
+            width: auto;
+            height: 64px;
+
+        }
+           /* Custom CSS for better responsiveness */
+        .services-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .service-icon {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .service-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            height: 100%;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 767px) {
+            .services-section {
+                padding: 30px 0;
+            }
+            
+            .icon-container {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .col-6 {
+                padding: 8px;
+            }
+        }
+
+        .bottom-cta {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 40px 0;
+            box-shadow: var(--shadow-lg);
+        }
+     /* footer section */
+           /* footer section */
+           .foot {
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            min-height: 9vh;
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--text-dark), var(--text-blue));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: var(--text-dark);
+            clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+        }
+
+        .footer-top {
+            padding: 80px 0 40px;
+        }
+
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .footer-logo img {
+            height: 50px;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .footer-heading {
+            color: var(--bg-light);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-btn);
+            transition: var(--transition);
+        }
+
+        .footer-col:hover .footer-heading::after {
+            width: 60px;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 15px;
+            display: block;
+        }
+
+        .footer-links a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-btn);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var( --text-fent);
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            gap: 10px;
+        }
+
+ .footer-contact-info .icons{
+        color:var(--text-fent);
+        margin-top: 4px;
+        margin-right: 10px;
+        font-size: 18px;
+        transition: var(--transition);
+
+    }
+
+  .footer-contact-info li:hover .icons {
+      transform: scale(1.2);
+  }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--bg-light);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-btn);
+            transform: translateY(-5px);
+        }
+
+        /* Special hover effects for each social media */
+        #facebook:hover {
+            background-color: #3b5998;
+            box-shadow: 0 0 15px #3b5998;
+        }
+
+        #twitter:hover {
+            background-color: #1da1f2;
+            box-shadow: 0 0 15px #1da1f2;
+        }
+
+        #instagram:hover {
+            background-color: #e1306c;
+            box-shadow: 0 0 15px #e1306c;
+        }
+
+        #linkedin:hover {
+            background-color: #0077b5;
+            box-shadow: 0 0 15px #0077b5;
+        }
+
+        .newsletter-form {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 14px 60px 14px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--bg-light);
+            transition: var(--transition);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-md);
+        }
+
+        .newsletter-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary-btn);
+            color: white;
+            border: none;
+            height: calc(100% - 10px);
+            width: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--primary-dark-btn);
+            transform: scale(1.05);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            margin: 30px 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 85px;
+            right: 30px;
+            background-color: var(--primary-btn);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 100;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            background-color: var(--text-dark);
+        }
+
+        .back-to-top:hover {
+            background-color: var( --text-fent);
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-button i {
+            font-size: 30px;
+        }
+
+        .footer-widget {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .footer-widget.animated {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Animation Classes */
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 50px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Wave animation */
+        .wave-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave {
+            position: relative;
+            width: 100%;
+            height: 50px;
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 50px;
+            animation: waveAnimation 15s linear infinite;
+        }
+
+        @keyframes waveAnimation {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .wave .shape-fill {
+            fill: #ffffff9a;
+        }
+
+        /* Pulse animation for social links */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+            }
+
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Improved mobile styling */
+        @media (max-width: 991px) {
+            .footer-col {
+                margin-bottom: 40px;
+            }
+
+            .footer-widget {
+                transform: translateY(30px);
+            }
+
+            .wave {
+                height: 40px;
+            }
+
+            .wave svg {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .footer-col {
+                margin-bottom: 30px;
+            }
+
+            .footer-top {
+                padding: 60px 0 20px;
+            }
+
+            .text-md-end,
+            .text-md-right {
+                text-align: center;
+            }
+
+            .wave {
+                height: 30px;
+            }
+
+            .wave svg {
+                height: 30px;
+            }
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                bottom: 90px;
+                right: 30px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-heading {
+                text-align: center;
+            }
+
+            .footer-heading::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-col:hover .footer-heading::after {
+                width: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-text {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 8px;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+
+            .wave {
+                height: 25px;
+            }
+
+            .wave svg {
+                height: 25px;
+            }
+
+        }
+
+        /* Mobile Footer Alignment Fixes */
+@media (max-width: 767.98px) {
+  /* Align all footer columns to start on mobile */
+  .footer-col {
+    text-align: left;
+  }
+  
+  /* Fix for footer widgets */
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  
+  /* Align logo and text to left */
+  .footer-logo, .footer-text {
+    text-align: left;
+  }
+  
+  /* Fix social links alignment */
+  .social-links {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust contact info alignment */
+  .footer-contact-info li {
+    text-align: left;
+  }
+  
+  /* Fix newsletter form */
+  .newsletter-form {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  /* Fix copyright section */
+  .copyright {
+    text-align: left !important;
+    margin-bottom: 10px;
+  }
+  
+  /* Fix the text-md-end class on mobile */
+  .text-md-end {
+    text-align: left !important;
+  }
+  
+  /* Add a bit more space between footer sections */
+  .footer-top .row > [class^="col-"] {
+    margin-bottom: 15px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+          <!-- Logo Section -->
+          <div class="logo">
+            <img src="../images/logo1.png" alt="pinnacle" height="50">
+          </div>
+      
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Navigation Links -->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link "href="../html/index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link " href="../html/about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link "href="../html/services.html" >Services</a></li>
+              <li class="nav-item"><a class="nav-link " href="../html/project.html">Project Gallery</a></li>
+              <li class="nav-item"><a class="nav-link active" href="../html/contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+      
+          <!-- Right Side Elements - Hidden on mobile (visible only on md screens and up) -->
+          <div class="d-none d-md-flex align-items-center">
+            <!-- Request Button -->
+            <button type="button" class=" btn btn-danger me-3" data-bs-toggle="modal" data-bs-target="#siteVisitModal">
+              REQUEST A SITE VISIT
+            </button>
+            
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Site Visit Modal -->
+      <div class="modal fade" id="siteVisitModal" tabindex="-1" aria-labelledby="siteVisitModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content contact-modal">
+            <div class="modal-header">
+              <h5 class="modal-title" id="siteVisitModalLabel">Request A Site Visit</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="visitForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Your name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Your Full Name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Your Contact No</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="Your Contact No." required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Your email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Enter message..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-danger w-100">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1>Contact Us</h1>
+            <p class="lead">Work with experts in trusted construction services</p>
+        </div>
+    </section>
+
+    <!-- Contact Information and Form -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="contact-info-card" style="box-shadow: var(--shadow-md); transition: var(--transition);">
+                        <h5>Get in Touch</h5>
+                        <p>Share your requirements with us to help us know your design in more detail.</p>
+                    </div>
+                    
+                    <div class="contact-info-card" style="box-shadow: var(--shadow-md); transition: var(--transition);">
+                        <h5>Call Us</h5>
+                        <p>Talk to our experts now how we can work together</p>
+                        <p><a href="tel:7770020599"><i class="fas fa-phone-alt me-2"></i>7770020599</a></p>
+                        <p><a href="tel:7775947600"><i class="fas fa-phone-alt me-2"></i>7775947600</a></p>
+                    </div>
+                    <div class="contact-info-card" style="box-shadow: var(--shadow-md); transition: var(--transition);">
+                        <h5>Our Message</h5>
+                        <p>We're usually replying within 24 hours</p>
+                        <p><a href="mailto:Pinnacleconstruction03@gmail.com"><i class="fas fa-envelope me-2"></i>Pinnacleconstruction03@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="contact-info-card" style="box-shadow: var(--shadow-md); transition: var(--transition);">
+                        <h5>Our Location</h5>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>PINNACLE CONSTRUCTION, MULIK COMPLEX, FLAT NO- A/1, NEAR AIRPORT CENTRE POINT,WARDHA ROAD, SOMALWADA, NAGPUR.</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="form-container" style="box-shadow: var(--shadow-lg); transition: var(--transition);">
+                        <h3 class="mb-4" style="color: var(--text-dark);">Send us a message</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Your phone">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="subject" class="form-label">Flats</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="" selected disabled>Select Flats</option>
+                                        <option value="Project Quote">1 BHK</option>
+                                        <option value="General Inquiry">2 BHK</option>
+                                        <option value="Support">3 BHK</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="consent" required>
+                                <label class="form-check-label" for="consent">I agree with your terms and conditions and privacy policy</label>
+                            </div>
+                            <button type="submit" class="custom-btn">Get Started</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-4">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.443324058863!2d79.06302087503335!3d21.094884680571067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf742af756ab%3A0xd399571545f9ff1!2sPINNACLE%20CONSTRUCTION!5e0!3m2!1sen!2sin!4v1746099479982!5m2!1sen!2sin" width="100%;" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--text-dark);">Committed to high quality roofing services</h2>
+            <p class="text-center mb-5" style="color: var(--text-dark);">We have been trusted by clients and roofing societies for over 15 years and are proud to keep providing the best. We have a team of qualified staff who work even in tight deadlines.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item" style="box-shadow: var(--shadow-sm); transition: var(--transition);">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <h6 style="color: var(--text-dark);">1. How to process your site for construction?</h6>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-body">
+                            <p>There are many varieties of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don't look even slightly believable.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="box-shadow: var(--shadow-sm); transition: var(--transition);">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <h6 style="color: var(--text-dark);">2. What are the charges of renovation?</h6>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-body">
+                            <p>The charges depend on the scope of the project, materials used, and timeline. We provide detailed quotes after assessing your specific requirements to ensure transparency and avoid unexpected costs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="box-shadow: var(--shadow-sm); transition: var(--transition);">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <h6 style="color: var(--text-dark);">3. Benefits of choosing our services?</h6>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-body">
+                            <p>Our services come with guaranteed quality, professional team, timely delivery, and post-completion support. We use only the best materials and follow strict safety standards on all our projects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" style="box-shadow: var(--shadow-sm); transition: var(--transition);">
+                        <div class="faq-header" onclick="toggleFaq(this)">
+                            <h6 style="color: var(--text-dark);">4. How to contact with our support team?</h6>
+                            <div class="faq-icon">+</div>
+                        </div>
+                        <div class="faq-body">
+                            <p>You can reach our support team via phone at 7770020599 , 7775947600 , email at Pinnacleconstruction03@gmail.com, or by filling out the contact form on this page. We typically respond within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Icons Section -->
+    <section class="services-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Banking Partners</h2>
+            <div class="row justify-content-center">
+                <!-- For mobile: 2 icons per row (col-6), For tablets: 3 icons per row (col-sm-4), For desktop: 5 icons per row (col-md-2) -->
+                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                    <div class="icon-container">
+                        <img src="../images/bank-of-baroda.png" class="service-icon" alt="Bank of Baroda">
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                    <div class="icon-container">
+                        <img src="../images/maharastra.png" class="service-icon" alt="Bank of Maharashtra">
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                    <div class="icon-container">
+                        <img src="../images/sbi.png" class="service-icon" alt="State Bank of India">
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                    <div class="icon-container">
+                        <img src="../images/axis.png" class="service-icon" alt="Axis Bank">
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                    <div class="icon-container">
+                        <img src="../images/kotak.png" class="service-icon" alt="Kotak Mahindra Bank">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <!-- Footer Section -->
+    <footer class="footer foot" id="footer">
+        <div class="wave-container">
+            <div class="wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+  
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-col">
+                        <div class="footer-widget" data-animation="fadeInUp" data-delay="100">
+                            <div class="footer-logo">
+                                <img src="../images/logo1.png" alt="Logo">
+                            </div>
+                            <p class="footer-text">We build more than just structures - we build your dreams into reality
+                                with precision, innovation, and unmatched craftsmanship.</p>
+                            <div class="social-links">
+                                <a href="#" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+  
+                    <div class="col-lg-3 col-md-6 footer-col">
+                        <div class="footer-widget" data-animation="fadeInUp" data-delay="200">
+                            <h3 class="footer-heading">Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#Service">Our Services</a></li>
+                                <li><a href="#projects">Our Projects</a></li>
+                                <li><a href="#testimonials">Testimonials</a></li>
+                                <li><a href="./contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+  
+                    <div class="col-lg-3 col-md-6 footer-col">
+                        <div class="footer-widget" data-animation="fadeInUp" data-delay="300">
+                            <h3 class="footer-heading">Services</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Residential Construction</a></li>
+                                <li><a href="#">Commercial Buildings</a></li>
+                                <li><a href="#">Redevelopment projects</a></li>
+                            </ul>
+                        </div>
+                    </div>
+  
+                    <div class="col-lg-3 col-md-6 footer-col">
+                        <div class="footer-widget" data-animation="fadeInUp" data-delay="400">
+                            <h3 class="footer-heading">Contact Info</h3>
+                            <ul class="footer-contact-info">
+                                <li>
+                                    <i class="fas fa-map-marker-alt icons"></i>
+                                    <span>PINNACLE CONSTRUCTION, MULIK COMPLEX, FLAT NO- A/1, NEAR AIRPORT CENTRE POINT,WARDHA ROAD, SOMALWADA, NAGPUR.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone-alt icons"></i>
+                                    <span>+91 7770020599 <br>+91 7775947600</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope icons"></i>
+                                    <span>Pinnacleconstruction03@gmail.com</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-clock icons"></i>
+                                    <span>Mon - sat: 10:00 AM - 7:00 PM</span>
+                                </li>
+                            </ul>
+  
+                            <div class="newsletter-form">
+                                <input type="email" class="newsletter-input" placeholder="Your email address">
+                                <button type="submit" class="newsletter-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="footer-divider"></div>
+  
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">© 2025 Capturous Infotech. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="copyright">
+                            <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-right: 15px;">Privacy
+                                Policy</a>
+                            <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms of Service</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+  
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917770020599" class="whatsapp-button" id="whatsapp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // Toggle FAQ items
+        function toggleFaq(element) {
+            const body = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            if (body.style.display === 'block') {
+                body.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                body.style.display = 'block';
+                icon.textContent = '-';
+            }
+        }
+
+        // Form Validation and Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const subject = document.getElementById('subject').value;
+            
+            if (!name || !email || !message || !subject) {
+                alert('Please fill all required fields');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Simulate form submission
+            // In a real application, you would use fetch() or axios to send data to your server
+            console.log('Form submitted with:', {
+                name,
+                email,
+                phone: document.getElementById('phone').value,
+                subject,
+                message
+            });
+            
+            // Show success message
+            const toast = new bootstrap.Toast(document.getElementById('successToast'));
+            toast.show();
+            
+            // Reset form
+            this.reset();
+        });
+
+
+       // footer section
+
+         //footer section
+  document.addEventListener("DOMContentLoaded", function () {
+    // Footer animation
+    const footerWidgets = document.querySelectorAll('.footer-widget');
+    
+    function animateFooterWidgets() {
+        footerWidgets.forEach((widget, index) => {
+            const delay = widget.getAttribute('data-delay') || 100 * index;
+            const animation = widget.getAttribute('data-animation') || 'fadeInUp';
+            
+            setTimeout(() => {
+                widget.classList.add('animated', animation);
+            }, delay);
+        });
+    }
+    
+    // Back to top button functionality
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    function toggleBackToTopButton() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Handle scroll events
+    window.addEventListener('scroll', toggleBackToTopButton);
+    
+    // Animation on scroll
+    const animateElements = document.querySelectorAll('.animate-in');
+    
+    function checkIfInView() {
+        animateElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    // Intersection Observer for footer animations
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateFooterWidgets();
+                footerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    const footer = document.getElementById('footer');
+    if (footer) {
+        footerObserver.observe(footer);
+    }
+    
+    // Social links hover effects
+    const socialLinks = document.querySelectorAll('.social-links a');
+    
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.classList.add('pulse');
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.classList.remove('pulse');
+        });
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    const newsletterInput = document.querySelector('.newsletter-input');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = newsletterInput.value.trim();
+            
+            if (email.length > 0 && /^\S+@\S+\.\S+$/.test(email)) {
+                // Success message with Bootstrap toast
+                const successToast = document.createElement('div');
+                successToast.className = 'position-fixed bottom-0 end-0 p-3';
+                successToast.style.zIndex = '1050';
+                successToast.innerHTML = `
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header bg-success text-white">
+                            <strong class="me-auto">Success!</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Thank you for subscribing to our newsletter!
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(successToast);
+                
+                // Remove toast after 3 seconds
+                setTimeout(() => {
+                    successToast.remove();
+                }, 3000);
+                
+                newsletterInput.value = '';
+            } else {
+                // Error message with Bootstrap toast
+                const errorToast = document.createElement('div');
+                errorToast.className = 'position-fixed bottom-0 end-0 p-3';
+                errorToast.style.zIndex = '1050';
+                errorToast.innerHTML = `
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header bg-danger text-white">
+                            <strong class="me-auto">Error</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(errorToast);
+                
+                // Remove toast after 3 seconds
+                setTimeout(() => {
+                    errorToast.remove();
+                }, 3000);
+            }
+        });
+    }
+    
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            
+            if (targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Initialize functionality
+    toggleBackToTopButton();
+    checkIfInView();
+    
+    // Re-check on scroll
+    window.addEventListener('scroll', checkIfInView);
+});
+        
+    </script>
+</body>
+</html>

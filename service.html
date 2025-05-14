@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css">
+</head>
+<style>
+    /* Reset and Base Styles */
+    :root {
+        --primary-btn: #ff6b6b;
+        --primary-dark-btn: #c44545;
+        --text-dark: #1e3d59;
+        --text-light: #00bfa6;
+        --text-fent: #e21743;
+        --bg-main: #ffffff;
+        --bg-light: #ffffff;
+        --text-blue: #4ed4f6;
+        --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
+        --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+        --shadow-lg: 0 15px 35px rgba(0,0,0,0.1);
+        --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-main);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    button, .btn {
+        cursor: pointer;
+        border: none;
+        background-color: var(--primary-btn);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    button:hover, .btn:hover {
+        background-color: var(--primary-dark-btn);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.385), rgba(0, 0, 0, 0.193)), url('../images/our-services-banner.jpg') center/cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        color: white;
+        margin-top: -42px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .hero h1::after {
+        content: '';
+        height: 3px;
+        width: 80px;
+        background-color: var(--primary-btn);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    /* Services Section */
+    .services {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+        color: var(--text-dark);
+        margin-bottom: 15px;
+    }
+
+    .section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .section-title::after {
+        content: '';
+        height: 3px;
+        width: 80px;
+        background-color: var(--text-fent);
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .service-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        position: relative;
+        top: 0;
+    }
+
+    .service-card:hover {
+        box-shadow: var(--shadow-lg);
+        top: -10px;
+    }
+
+    .service-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .service-card:hover .service-image img {
+        transform: scale(1.1);
+    }
+
+    .service-content {
+        padding: 25px;
+    }
+
+    .service-content h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: var(--text-dark);
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .service-content h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 50px;
+        background-color: var(--text-light);
+    }
+
+    .service-content p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .service-features {
+        margin: 20px 0;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .feature-icon {
+        color: var(--text-light);
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    .service-card .btn {
+        display: inline-block;
+        margin-top: 10px;
+        background-color: transparent;
+        color: var(--text-fent);
+        border: 2px solid var(--text-fent);
+        padding: 8px 20px;
+    }
+
+    .service-card .btn:hover {
+        background-color: var(--text-fent);
+        color: white;
+    }
+
+    /* Process Section */
+    .process {
+        background-color: #f9f9f9;
+        padding: 80px 0;
+    }
+
+    .process-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        position: relative;
+    }
+
+    .process-steps::before {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #ddd;
+        z-index: 1;
+    }
+
+    .step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        max-width: 200px;
+    }
+
+    .step-number {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--text-blue);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 auto 20px;
+        position: relative;
+        transition: var(--transition);
+    }
+
+    .step:hover .step-number {
+        transform: scale(1.1);
+        box-shadow: var(--shadow-md);
+    }
+
+    .step h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: var(--text-dark);
+    }
+
+    .step p {
+        font-size: 14px;
+        color: #666;
+    }
+
+    /* CTA Section */
+    .cta {
+        background: linear-gradient(rgba(30, 61, 89, 0.9), rgba(30, 61, 89, 0.9)), url('/api/placeholder/1200/400') center/cover fixed;
+        padding: 100px 0;
+        color: white;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .cta p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .cta .btn {
+        background-color: var(--text-light);
+        color: white;
+        font-size: 18px;
+        padding: 15px 40px;
+        border-radius: 50px;
+    }
+
+    .cta .btn:hover {
+        background-color: white;
+        color: var(--text-dark);
+    }
+
+
+    
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .animate-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: var(--transition);
+    }
+
+    .animate-in.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        nav ul {
+            gap: 15px;
+        }
+        
+        .hero {
+            height: 350px;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+        }
+        
+        .process-steps {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .process-steps::before {
+            display: none;
+        }
+        
+        .step {
+            max-width: 100%;
+        }
+        
+        .footer-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    @media (max-width: 768px) {
+  
+        
+        nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: white;
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease;
+        }
+        
+        nav.active {
+            height: 300px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        nav ul {
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+        }
+    }
+
+
+
+
+            /* Row and Column classes */
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+    
+            .col-lg-3, .col-md-6 {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+            }
+    
+            @media (min-width: 768px) {
+                .col-md-6 {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+                .text-md-end {
+                    text-align: right;
+                }
+            }
+    
+            @media (min-width: 992px) {
+                .col-lg-3 {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+            }
+    
+            /* Footer Styles */
+            #footer {
+                background-color: var(--text-dark);
+                position: relative;
+                overflow: hidden;
+                margin-top: auto;
+            }
+    
+            #footer::before {
+                content: '';
+                position: absolute;
+                top: -50px;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                background: var(--text-dark);
+                clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+            }
+    
+            .footer-top {
+                padding: 80px 0 40px;
+            }
+    
+            .footer-bottom {
+                background-color: rgba(0,0,0,0.1);
+                padding: 20px 0;
+            }
+    
+            .footer-logo {
+                margin-bottom: 25px;
+            }
+    
+            .footer-logo img {
+                height: 50px;
+                transition: var(--transition);
+            }
+    
+            .footer-logo:hover img {
+                transform: scale(1.05);
+            }
+    
+            .footer-heading {
+                color: var(--bg-light);
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 25px;
+                position: relative;
+            }
+    
+            .footer-heading::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                width: 40px;
+                height: 3px;
+                background-color: var(--primary-btn);
+                transition: var(--transition);
+            }
+    
+            .footer-col:hover .footer-heading::after {
+                width: 60px;
+            }
+    
+            .footer-text {
+                color: rgba(255,255,255,0.7);
+                margin-bottom: 25px;
+                line-height: 1.8;
+            }
+    
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+    
+            .footer-links a {
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                transition: var(--transition);
+                position: relative;
+                padding-left: 15px;
+                display: block;
+            }
+    
+            .footer-links a::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 6px;
+                height: 6px;
+                background-color: var(--primary-btn);
+                border-radius: 50%;
+                opacity: 0;
+                transition: var(--transition);
+            }
+    
+            .footer-links a:hover {
+                color: var(--primary-btn);
+                padding-left: 20px;
+            }
+    
+            .footer-links a:hover::before {
+                opacity: 1;
+            }
+    
+            .footer-contact-info {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .footer-contact-info li {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 15px;
+                color: rgba(255,255,255,0.7);
+            }
+    
+            .footer-contact-info i {
+                color: var(--primary-btn);
+                margin-right: 10px;
+                font-size: 18px;
+                margin-top: 4px;
+                transition: var(--transition);
+            }
+    
+            .footer-contact-info li:hover i {
+                transform: scale(1.2);
+            }
+    
+            .social-links {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+    
+            .social-links a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255,255,255,0.1);
+                border-radius: 50%;
+                color: var(--bg-light);
+                font-size: 16px;
+                transition: var(--transition);
+            }
+    
+            .social-links a:hover {
+                background-color: var(--primary-btn);
+                transform: translateY(-5px);
+            }
+    
+            .newsletter-form {
+                position: relative;
+                margin-top: 20px;
+            }
+    
+            .newsletter-input {
+                width: 100%;
+                padding: 14px 60px 14px 20px;
+                border: none;
+                border-radius: 50px;
+                background-color: rgba(255,255,255,0.1);
+                color: var(--bg-light);
+                transition: var(--transition);
+            }
+    
+            .newsletter-input::placeholder {
+                color: rgba(255,255,255,0.5);
+            }
+    
+            .newsletter-input:focus {
+                outline: none;
+                background-color: rgba(255,255,255,0.15);
+                box-shadow: var(--shadow-md);
+            }
+    
+            .newsletter-btn {
+                position: absolute;
+                right: 5px;
+                top: 5px;
+                background-color: var(--primary-btn);
+                color: white;
+                border: none;
+                height: calc(100% - 10px);
+                width: 45px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                cursor: pointer;
+            }
+    
+            .newsletter-btn:hover {
+                background-color: var(--primary-dark-btn);
+                transform: scale(1.05);
+            }
+    
+            .copyright {
+                color: rgba(255,255,255,0.6);
+                text-align: center;
+                margin: 0;
+                font-size: 14px;
+            }
+    
+            .footer-divider {
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+                margin: 30px 0;
+            }
+    
+            /* Animation Classes */
+            .fadeInUp {
+                animation-name: fadeInUp;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+            }
+    
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translate3d(0, 50px, 0);
+                }
+                to {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+    
+            /* Mobile Responsive */
+            @media (max-width: 991px) {
+                .footer-col {
+                    margin-bottom: 40px;
+                }
+            }
+    
+            @media (max-width: 767px) {
+                .footer-col {
+                    margin-bottom: 30px;
+                }
+                
+                .footer-top {
+                    padding: 60px 0 20px;
+                }
+                
+                .text-md-end {
+                    text-align: center;
+                }
+                
+                .social-links {
+                    justify-content: center;
+                }
+                
+                .footer-heading {
+                    text-align: center;
+                }
+                
+                .footer-heading::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                
+                .footer-col:hover .footer-heading::after {
+                    width: 60px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                
+                .footer-text {
+                    text-align: center;
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .social-links {
+                    gap: 8px;
+                }
+                
+                .social-links a {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 14px;
+                }
+            }
+    
+</style>
+<body>
+         <!-- Header -->
+         <button class="mobile-menu-btn">&#9776;</button>
+         <!-- Navigation Bar -->
+         <nav class="navbar">
+             <img src="../images/logo1.png" class="logo" alt="logo" height="50px" />
+             
+             <div class="hamburger">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+             </div>
+             
+             <div class="navbar1">
+              <a href="../html/index.html"><span class="icon">Home</span></a>
+              <a href="../html/about-us.html"><span class="icon">About Us</span></a>
+              <a href="../html/our-services.html"><span class="icon">Services</span></a>
+              <a href="../html/project.html"><span class="icon">Projects</span></a>
+              <a href="../html/contact.html"><span class="icon">Contact Us</span></a>
+            </div>
+           </nav>
+                   
+         <!-- Hero Section -->
+         <section class="hero">
+             <div class="hero-content">
+                 <h1>Our Services</h1>
+                 <p>Building excellence with innovation, quality, and precision for over two decades.</p>
+                 <a href="#" class="btn">Get A Quote</a>
+             </div>
+         </section>
+     
+         <!-- Services Section -->
+         <section class="services" id="services">
+             <div class="container">
+                 <div class="section-title animate-in">
+                     <h2>What We Offer</h2>
+                     <p>At Pinnacle Construction, we deliver comprehensive construction solutions tailored to your specific needs, ensuring quality, timeliness, and client satisfaction.</p>
+                 </div>
+     
+                 <div class="services-grid">
+                     <!-- Residential Construction -->
+                     <div class="service-card animate-in">
+                         <div class="service-image">
+                             <img src="/api/placeholder/400/300" alt="Residential Construction">
+                         </div>
+                         <div class="service-content">
+                             <h3>Residential Construction</h3>
+                             <p>We build dream homes that combine aesthetic appeal with functional living spaces, tailored to your lifestyle and preferences.</p>
+                             <div class="service-features">
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Custom Home Building</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Home Additions & Renovations</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Luxury Home Construction</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Sustainable & Energy-Efficient Homes</span>
+                                 </div>
+                             </div>
+                             <a href="#" class="btn">Learn More</a>
+                         </div>
+                     </div>
+     
+                     <!-- Commercial Buildings -->
+                     <div class="service-card animate-in">
+                         <div class="service-image">
+                             <img src="/api/placeholder/400/300" alt="Commercial Buildings">
+                         </div>
+                         <div class="service-content">
+                             <h3>Commercial Buildings</h3>
+                             <p>From office spaces to retail outlets, we construct commercial buildings that enhance business operations and create lasting impressions.</p>
+                             <div class="service-features">
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Office Building Construction</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Retail & Restaurant Spaces</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Warehouses & Industrial Facilities</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Healthcare & Educational Buildings</span>
+                                 </div>
+                             </div>
+                             <a href="#" class="btn">Learn More</a>
+                         </div>
+                     </div>
+     
+                     <!-- Redevelopment Projects -->
+                     <div class="service-card animate-in">
+                         <div class="service-image">
+                             <img src="/api/placeholder/400/300" alt="Redevelopment Projects">
+                         </div>
+                         <div class="service-content">
+                             <h3>Redevelopment Projects</h3>
+                             <p>We transform existing structures into modern, functional spaces while preserving architectural heritage and maximizing value.</p>
+                             <div class="service-features">
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Historic Building Restoration</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Property Repurposing</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Urban Renewal Projects</span>
+                                 </div>
+                                 <div class="feature-item">
+                                     <span class="feature-icon">✓</span>
+                                     <span>Mixed-Use Development</span>
+                                 </div>
+                             </div>
+                             <a href="#" class="btn">Learn More</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     
+         <!-- Process Section -->
+         <section class="process">
+             <div class="container">
+                 <div class="section-title animate-in">
+                     <h2>Our Process</h2>
+                     <p>We follow a systematic approach to ensure successful project delivery from conception to completion.</p>
+                 </div>
+     
+                 <div class="process-steps">
+                     <div class="step animate-in">
+                         <div class="step-number">1</div>
+                         <h4>Consultation</h4>
+                         <p>We discuss your vision, requirements, and budget to understand your project needs.</p>
+                     </div>
+     
+                     <div class="step animate-in">
+                         <div class="step-number">2</div>
+                         <h4>Planning</h4>
+                         <p>Our experts develop detailed plans, designs, and project timelines.</p>
+                     </div>
+     
+                     <div class="step animate-in">
+                         <div class="step-number">3</div>
+                         <h4>Construction</h4>
+                         <p>We execute the project with precision, quality materials, and skilled craftsmanship.</p>
+                     </div>
+     
+                     <div class="step animate-in">
+                         <div class="step-number">4</div>
+                         <h4>Delivery</h4>
+                         <p>Final inspections are conducted before we hand over your completed project.</p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+     
+         <!-- CTA Section -->
+         <section class="cta">
+             <div class="container">
+                 <h2>Ready to Start Your Project?</h2>
+                 <p>Contact us today for a free consultation and estimate. Let's bring your vision to life with Pinnacle Construction.</p>
+                 <a href="#" class="btn">Contact Us Now</a>
+             </div>
+         </section>
+
+         <footer id="footer">
+            <div class="footer-top">
+             <div class="container">
+               <div class="row">
+                 <div class="col-lg-3 col-md-6 footer-col">
+                   <div class="footer-widget" data-animation="fadeInUp" data-delay="100">
+                     <div class="footer-logo">
+                       <img src="../images/logo1.png" alt="Logo">
+                     </div>
+                     <p class="footer-text">We build more than just structures - we build your dreams into reality with precision, innovation, and unmatched craftsmanship.</p>
+                     <div class="social-links">
+                       <a href="#" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                       <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                       <a href="#" id="instagram"><i class="fab fa-instagram"></i></a>
+                       <a href="#" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                     </div>
+                   </div>
+                 </div>
+                 
+                 <div class="col-lg-3 col-md-6 footer-col">
+                   <div class="footer-widget" data-animation="fadeInUp" data-delay="200">
+                     <h3 class="footer-heading">Quick Links</h3>
+                     <ul class="footer-links">
+                       <li><a href="about-us.html">About Us</a></li>
+                       <li><a href="our-services.html">Our Services</a></li>
+                       <li><a href="project.html">Our Projects</a></li>
+                       <li><a href="#testimonials">Testimonials</a></li>
+                       <li><a href="./contact.html">Contact Us</a></li>
+                     </ul>
+                   </div>
+                 </div>
+                 
+                 <div class="col-lg-3 col-md-6 footer-col">
+                   <div class="footer-widget" data-animation="fadeInUp" data-delay="300">
+                     <h3 class="footer-heading">Services</h3>
+                     <ul class="footer-links">
+                       <li><a href="#">Residential Construction</a></li>
+                       <li><a href="#">Commercial Buildings</a></li>
+                       <li><a href="#">Redevelopment projects</a></li>
+                     </ul>
+                   </div>
+                 </div>
+                 
+                 <div class="col-lg-3 col-md-6 footer-col">
+                   <div class="footer-widget" data-animation="fadeInUp" data-delay="400">
+                     <h3 class="footer-heading">Contact Info</h3>
+                     <ul class="footer-contact-info">
+                       <li>
+                         <i class="fas fa-map-marker-alt"></i>
+                         <span>PINNACLE CONSTRUCTION, MULIK COMPLEX, FLAT NO- A/1, NEAR AIRPORT CENTRE POINT,WARDHA ROAD, SOMALWADA, NAGPUR.</span>
+                       </li>
+                       <li>
+                         <i class="fas fa-phone-alt"></i>
+                         <span>+91 7770020599 <br>+91 7775947600</span>
+                       </li>
+                       <li>
+                         <i class="fas fa-envelope"></i>
+                         <span>Pinnacleconstruction03@gmail.com</span>
+                       </li>
+                       <li>
+                         <i class="fas fa-clock"></i>
+                         <span>Mon - sat: 10:00 AM - 7:00 PM</span>
+                       </li>
+                     </ul>
+                     
+                     <div class="newsletter-form">
+                       <input type="email" class="newsletter-input" placeholder="Your email address">
+                       <button type="submit" class="newsletter-btn">
+                         <i class="fas fa-paper-plane"></i>
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               
+               <div class="footer-divider"></div>
+               
+               <div class="row">
+                 <div class="col-md-6">
+                   <p class="copyright">© 2025 CapturousInfotech. All Rights Reserved.</p>
+                 </div>
+                 <div class="col-md-6 text-md-end">
+                   <p class="copyright">
+                     <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-right: 15px;">Privacy Policy</a>
+                     <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms of Service</a>
+                   </p>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </footer>
+
+           
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        menuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Animation on Scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Add a small delay to stagger animations
+            let delay = 0;
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.2}s`;
+            });
+            
+            document.querySelectorAll('.step').forEach((step, index) => {
+                step.style.transitionDelay = `${index * 0.15}s`;
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Service Cards Hover Effect Enhancement
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const otherCards = Array.from(serviceCards).filter(c => c !== card);
+                otherCards.forEach(c => {
+                    c.style.opacity = '0.7';
+                    c.style.transform = 'scale(0.98)';
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                serviceCards.forEach(c => {
+                    c.style.opacity = '1';
+                    c.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+ 
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // ===== FOOTER ANIMATIONS =====
+            
+            // 1. Footer Widget Animation with Staggered Delay
+            const footerWidgets = document.querySelectorAll('.footer-widget');
+            
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            const delay = entry.target.getAttribute('data-delay') || index * 100;
+                            setTimeout(() => {
+                                entry.target.classList.add('fadeInUp');
+                            }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                footerWidgets.forEach(widget => {
+                    observer.observe(widget);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                footerWidgets.forEach((widget, index) => {
+                    const delay = widget.getAttribute('data-delay') || index * 100;
+                    setTimeout(() => {
+                        widget.classList.add('fadeInUp');
+                    }, delay);
+                });
+            }
+            
+            // 2. Social Icons Pulse Animation
+            const socialLinks = document.querySelectorAll('.social-links a');
+            
+            socialLinks.forEach((link, index) => {
+                // Staggered pulse animation for social icons
+                setTimeout(() => {
+                    link.classList.add('pulse-once');
+                    
+                    // Remove class after animation completes
+                    link.addEventListener('animationend', () => {
+                        link.classList.remove('pulse-once');
+                    });
+                }, 1000 + (index * 200));
+                
+                // Hover effect
+                link.addEventListener('mouseenter', () => {
+                    link.classList.add('hover-effect');
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    link.classList.remove('hover-effect');
+                });
+            });
+            
+            // 3. Footer Links Staggered Appearance
+            const footerLinks = document.querySelectorAll('.footer-links li');
+            
+            if ('IntersectionObserver' in window) {
+                const linksObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const links = entry.target.querySelectorAll('li');
+                            links.forEach((link, index) => {
+                                setTimeout(() => {
+                                    link.classList.add('slide-in');
+                                }, 100 * index);
+                            });
+                            linksObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                
+                document.querySelectorAll('.footer-links').forEach(list => {
+                    linksObserver.observe(list);
+                });
+            }
+            
+            // 4. Contact Info Icon Animations
+            const contactIcons = document.querySelectorAll('.footer-contact-info i');
+            
+            contactIcons.forEach((icon, index) => {
+                if ('IntersectionObserver' in window) {
+                    const iconObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                setTimeout(() => {
+                                    entry.target.classList.add('bounce');
+                                }, 300 * index);
+                                iconObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    
+                    iconObserver.observe(icon);
+                } else {
+                    setTimeout(() => {
+                        icon.classList.add('bounce');
+                    }, 1500 + (index * 300));
+                }
+            });
+            
+            // 5. Newsletter Input Focus Animation
+            const newsletterInput = document.querySelector('.newsletter-input');
+            const newsletterBtn = document.querySelector('.newsletter-btn');
+            
+            if (newsletterInput && newsletterBtn) {
+                newsletterInput.addEventListener('focus', () => {
+                    newsletterBtn.classList.add('shake');
+                    setTimeout(() => {
+                        newsletterBtn.classList.remove('shake');
+                    }, 500);
+                });
+                
+                // Button animation on hover
+                newsletterBtn.addEventListener('mouseenter', () => {
+                    newsletterBtn.classList.add('grow');
+                });
+                
+                newsletterBtn.addEventListener('mouseleave', () => {
+                    newsletterBtn.classList.remove('grow');
+                });
+            }
+            
+            // 6. Footer Logo Animation
+            const footerLogo = document.querySelector('.footer-logo img');
+            
+            if (footerLogo) {
+                if ('IntersectionObserver' in window) {
+                    const logoObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('rotate-in');
+                                logoObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    
+                    logoObserver.observe(footerLogo);
+                } else {
+                    setTimeout(() => {
+                        footerLogo.classList.add('rotate-in');
+                    }, 800);
+                }
+            }
+            
+            // 7. Footer Divider Animation
+            const footerDivider = document.querySelector('.footer-divider');
+            
+            if (footerDivider) {
+                if ('IntersectionObserver' in window) {
+                    const dividerObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('expand');
+                                dividerObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.7 });
+                    
+                    dividerObserver.observe(footerDivider);
+                } else {
+                    setTimeout(() => {
+                        footerDivider.classList.add('expand');
+                    }, 1200);
+                }
+            }
+            
+            // 8. Copyright Text Typing Effect
+            const copyrightText = document.querySelector('.copyright');
+            
+            if (copyrightText) {
+                if ('IntersectionObserver' in window) {
+                    const copyrightObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('fade-in');
+                                copyrightObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.8 });
+                    
+                    copyrightObserver.observe(copyrightText);
+                } else {
+                    setTimeout(() => {
+                        copyrightText.classList.add('fade-in');
+                    }, 1500);
+                }
+            }
+            
+            // 9. Back to Top Button Animation
+            const backToTopBtn = document.querySelector('.back-to-top');
+            
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                // Scroll to top functionality
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Construction Company</title>
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+
+            --text-dark: #1e3d59;          
+            --text-light: #00bfa6;  
+            --text-fent: #e21743;
+            --bg-main: #ffffff;             
+            --bg-light: #ffffff;
+            --text-blue: #4ed4f6;     
+            --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 15px 35px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --secondary-color: #1e3d59;
+            --light-gray: #f8f9fa;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #1e3d59;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+/* Navbar */
+.nav-item{
+  font-size: 20px;
+  margin-right: 20px;
+}
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 10px 20px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--text-blue);
+}
+
+.navbar {
+  position: sticky; /* Makes the navbar sticky */
+  top: 0; /* Ensures it sticks to the top of the viewport */
+  z-index: 1030; /* Keeps it above other elements */
+  background-color: white; /* Ensures the background is visible */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+@supports not (position: sticky) {
+  .navbar {
+    position: fixed; /* Fallback for browsers that don't support sticky */
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+.hero-section .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 61, 89, 0.5); /* based on --text-dark */
+  z-index: -1;
+}
+.hero-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hero-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-blue);
+  animation: fadeInDown 1s ease-out;
+}
+.hero-content h6 {
+  font-size: 1.5rem;
+  color: var(--text-fent);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gallery */
+.project-gallery img {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.project-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 10px;
+  background-color: var(--bg-light);
+}
+
+/* Buttons */
+.btn-outline-dark {
+  color: var(--text-dark);
+  border-color: var(--text-fent);
+}
+.btn-outline-dark:hover,
+.btn-outline-dark.active {
+  background-color: var( --text-fent);
+  color: white;
+  border-color: var(--primary-dark-btn);
+}
+
+.btn-warning {
+  background-color: var( --text-fent);
+  border-color: var(--primary-dark-btn);
+  color: #fff;
+}
+.btn-warning:hover {
+  background-color: var(--primary-dark-btn);
+  border-color: var (--primary-dark-btn);
+}
+
+
+
+
+
+.contact-modal {
+  border-radius: 12px;
+  background-color: var(--bg-light);
+  animation: fadeInZoom 0.4s ease-out;
+}
+
+.contact-modal .modal-header {
+  background-color: var( --text-fent);
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.contact-modal .modal-body {
+  padding: 20px;
+}
+
+.contact-modal .form-label {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.contact-modal .form-control {
+  border-radius: 8px;
+  border: 1px solid var(--text-blue);
+  transition: border 0.3s ease;
+}
+
+.contact-modal .form-control:focus {
+  border-color: var( --text-fent);
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+}
+
+.contact-modal .btn-primary {
+  background-color: var( --text-fent);
+  border-color: var(--primary-dark-btn);
+}
+.contact-modal .btn-primary:hover {
+  background-color: var(--primary-dark-btn);
+}
+
+/* Animation */
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+        
+
+        
+        /* Floating Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(26, 60, 110, 0.95);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(26, 60, 110, 1);
+        }
+   
+   
+        /* Hero Section with Parallax */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/about-banner.jpg') center/cover fixed;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            animation: fadeInUp 1s ease;
+        }
+        
+
+        .hero p {
+            font-size: 24px;
+            max-width: 700px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            color: #fff;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 30px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .scroll-down:hover {
+            opacity: 1;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* About Section with Card Design */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(170deg, #fff 0%, #f0f8ff 100%);
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var( --text-fent);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            border-top: 6px solid var( --text-fent);
+            border-left: 6px solid var( --text-fent);
+            z-index: 1;
+        }
+        
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            border-bottom: 6px solid var( --text-fent);
+            border-right: 6px solid var ( --text-fent);
+            z-index: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var( --text-fent);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background-color: var( --text-fent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+ .mission-vision {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.mission-vision .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-vision-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.mission-vision-card {
+  background: transparent;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.mission-vision-card:hover .card-inner,
+.mission-vision-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-icon {
+  font-size: 3rem;
+  color:var(--text-fent);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e3d59;
+}
+
+@media (max-width: 768px) {
+  .mission-vision-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+        
+        /* Features Section with Hover Effects */
+        .features-section {
+            padding: 100px 0;
+            background: linear-gradient(170deg, #f0f8ff 0%, #fff 100%);
+            position: relative;
+        }
+        
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f2f2f2' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .feature {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            width: calc(33.33% - 20px);
+            min-width: 280px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border-bottom: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background-color: rgba(78, 212, 246, 0.05);
+            z-index: -1;
+            transition: height 0.5s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+            border-bottom: 4px solid var( --text-fent);
+        }
+        
+        .feature:hover::before {
+            height: 100%;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: var( --text-fent);
+            margin-bottom: 25px;
+            transition: transform 0.4s ease;
+        }
+        
+        .feature:hover .feature-icon {
+            transform: scale(1.2);
+        }
+        
+        .feature h3 {
+            color: var(--secondary-color);
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Counter Section */
+        .counter-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(30, 61, 89, 0.9), rgba(30, 61, 89, 0.9)), url('../images/banner.jpg') center/cover fixed;
+            color: white;
+            text-align: center;
+        }
+        
+        .counter-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .counter-item {
+            margin: 20px;
+            min-width: 200px;
+        }
+        
+        .counter-value {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var( --text-fent);
+        }
+        
+        .counter-label {
+            font-size: 18px;
+            text-transform: uppercase;  
+            letter-spacing: 1px;
+        }
+        
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .mission-vision-content {
+                flex-direction: column;
+            }
+            
+            .mission-vision-card {
+                margin-bottom: 40px;
+            }
+            
+            .feature {
+                width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+            
+            .navbar {
+                padding: 0 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(26, 60, 110, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .about-text h3 {
+                font-size: 26px;
+            }
+            
+            .team-member, .feature {
+                width: 100%;
+            }
+            
+            .counter-item {
+                width: 100%;
+            }
+
+        }
+
+
+
+            /* footer section */
+    .foot {
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      min-height: 9vh;
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+  }
+
+  .footer {
+    background: linear-gradient(135deg, var(--text-dark), var(--text-blue));
+      position: relative;
+      overflow: hidden;
+  }
+
+  .footer::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: var(--text-dark);
+      clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  .footer-top {
+      padding: 80px 0 40px;
+  }
+
+  .footer-bottom {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+  }
+
+  .footer-logo {
+      margin-bottom: 25px;
+      transition: var(--transition);
+  }
+
+  .footer-logo img {
+      height: 50px;
+      transition: var(--transition);
+  }
+
+  .footer-logo:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+  }
+
+  .footer-heading {
+      color: var(--bg-light);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+  }
+
+  .footer-heading::after {
+
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 40px;
+      height: 3px;
+      background-color: var( --text-fent);
+      transition: var(--transition);
+  }
+
+  .footer-col:hover .footer-heading::after {
+      width: 60px;
+  }
+
+  .footer-text {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      line-height: 1.8;
+  }
+
+  .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .footer-links li {
+      margin-bottom: 12px;
+  }
+
+  .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var (--transition);
+      position: relative;
+      padding-left: 15px;
+      display: block;
+  }
+
+  .footer-links a::before {
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background-color: var( --text-fent);
+      border-radius: 50%;
+      opacity: 0;
+      transition: var(--transition);
+  }
+
+  .footer-links a:hover {
+      color: var( --text-fent);
+      padding-left: 20px;
+  }
+
+  .footer-links a:hover::before {
+      opacity: 1;
+  }
+
+  .footer-contact-info {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  .footer-contact-info li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.7);
+  }
+
+ .footer-contact-info .icons{
+        color:var(--text-fent);
+        margin-top: 4px;
+        margin-right: 10px;
+        font-size: 18px;
+        transition: var(--transition);
+
+    }
+
+  .footer-contact-info li:hover .icons {
+      transform: scale(1.2);
+  }
+
+  .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+  }
+
+  .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--bg-light);
+      font-size: 16px;
+      transition: var(--transition);
+  }
+
+  .social-links a:hover {
+      background-color: var( --text-fent);
+      transform: translateY(-5px);
+  }
+
+  /* Special hover effects for each social media */
+  #facebook:hover {
+      background-color: #3b5998;
+      box-shadow: 0 0 15px #3b5998;
+  }
+
+  #twitter:hover {
+      background-color: #1da1f2;
+      box-shadow: 0 0 15px #1da1f2;
+  }
+
+  #instagram:hover {
+      background-color: #e1306c;
+      box-shadow: 0 0 15px #e1306c;
+  }
+
+  #linkedin:hover {
+      background-color: #0077b5;
+      box-shadow: 0 0 15px #0077b5;
+  }
+
+  .newsletter-form {
+      position: relative;
+      margin-top: 20px;
+  }
+
+  .newsletter-input {
+      width: 100%;
+      padding: 14px 60px 14px 20px;
+      border: none;
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--bg-light);
+      transition: var(--transition);
+  }
+
+  .newsletter-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+  }
+
+  .newsletter-input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: var(--shadow-md);
+  }
+
+  .newsletter-btn {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background-color: var( --text-fent);
+      color: white;
+      border: none;
+      height: calc(100% - 10px);
+      width: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      cursor: pointer;
+  }
+
+  .newsletter-btn:hover {
+      background-color: var(--primary-dark-btn);
+      transform: scale(1.05);
+  }
+
+  .copyright {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      margin: 0;
+      font-size: 14px;
+  }
+
+  .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+      margin: 30px 0;
+  }
+
+  .back-to-top {
+      position: fixed;
+      bottom: 85px;
+      right: 30px;
+      background-color: var( --text-fent);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: var(--transition);
+      z-index: 100;
+      cursor: pointer;
+  }
+
+  .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      background-color: var(--text-dark);
+  }
+
+  .back-to-top:hover {
+      background-color: var(--text-fent);
+      transform: translateY(-5px);
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: var(--shadow-md);
+      z-index: 100;
+      cursor: pointer;
+      transition: var(--transition);
+  }
+
+  .whatsapp-button:hover {
+      background-color: #128c7e;
+      transform: scale(1.1);
+  }
+
+  .whatsapp-button i {
+      font-size: 30px;
+  }
+
+  .footer-widget {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      transform: translateY(50px);
+      opacity: 0;
+  }
+
+  .footer-widget.animated {
+      transform: translateY(0);
+      opacity: 1;
+  }
+
+  /* Animation Classes */
+  .fadeInUp {
+      animation-name: fadeInUp;
+  }
+
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translate3d(0, 50px, 0);
+      }
+
+      to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+      }
+  }
+
+  .fadeIn {
+      animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+
+      to {
+          opacity: 1;
+      }
+  }
+
+  /* Wave animation */
+  .wave-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+  }
+
+  .wave {
+      position: relative;
+      width: 100%;
+      height: 50px;
+  }
+
+  .wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 50px;
+      animation: waveAnimation 15s linear infinite;
+  }
+
+  @keyframes waveAnimation {
+      0% {
+          transform: translateX(0);
+      }
+
+      50% {
+          transform: translateX(-25%);
+      }
+
+      100% {
+          transform: translateX(0);
+      }
+  }
+
+  .wave .shape-fill {
+      fill: #ffffff9a;
+  }
+
+  /* Pulse animation for social links */
+  @keyframes pulse {
+      0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+      }
+
+      70% {
+          transform: scale(1.1);
+          box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+      }
+
+      100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+      }
+  }
+
+  .pulse {
+      animation: pulse 2s infinite;
+  }
+
+  /* Improved mobile styling */
+  @media (max-width: 991px) {
+      .footer-col {
+          margin-bottom: 40px;
+      }
+
+      .footer-widget {
+          transform: translateY(30px);
+      }
+
+      .wave {
+          height: 40px;
+      }
+
+      .wave svg {
+          height: 40px;
+      }
+  }
+
+  @media (max-width: 767px) {
+      .footer-col {
+          margin-bottom: 30px;
+
+      }
+
+      .footer-top {
+          padding: 60px 0 20px;
+      }
+
+      .text-md-end,
+      .text-md-right {
+          text-align: center;
+      }
+
+      .wave {
+          height: 30px;
+      }
+
+      .wave svg {
+          height: 30px;
+      }
+
+      .back-to-top {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          bottom: 90px;
+          right: 30px;
+      }
+
+      .social-links {
+          justify-content: center;
+      }
+
+      .footer-heading {
+          text-align: center;
+      }
+
+      .footer-heading::after {
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      .footer-col:hover .footer-heading::after {
+          width: 60px;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      .footer-text {
+          text-align: center;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .social-links {
+          gap: 8px;
+      }
+
+      .social-links a {
+          width: 35px;
+          height: 35px;
+          font-size: 14px;
+      }
+
+      .wave {
+          height: 25px;
+      }
+
+      .wave svg {
+          height: 25px;
+      }
+  }
+
+
+
+  /* Mobile Footer Alignment Fixes */
+@media (max-width: 767.98px) {
+  /* Align all footer columns to start on mobile */
+  .footer-col {
+    text-align: left;
+  }
+  
+  /* Fix for footer widgets */
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+  
+  /* Align logo and text to left */
+  .footer-logo, .footer-text {
+    text-align: left;
+  }
+  
+  /* Fix social links alignment */
+  .social-links {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust contact info alignment */
+  .footer-contact-info li {
+    text-align: left;
+  }
+  
+  /* Fix newsletter form */
+  .newsletter-form {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  /* Fix copyright section */
+  .copyright {
+    text-align: left !important;
+    margin-bottom: 10px;
+  }
+  
+  /* Fix the text-md-end class on mobile */
+  .text-md-end {
+    text-align: left !important;
+  }
+  
+  /* Add a bit more space between footer sections */
+  .footer-top .row > [class^="col-"] {
+    margin-bottom: 15px;
+  }
+}
+
+/* CSS for flipping the card */
+.mission-vision-card .card-inner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.mission-vision-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+    </style>
+</head>
+<body>  
+
+    <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../images/logo1.png" alt="pinnacle" height="50">
+      </div>
+  
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link "href="../html/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../html/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link "href="../html/services.html" >Services</a></li>
+          <li class="nav-item"><a class="nav-link " href="../html/project.html">Project Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="../html/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Right Side Elements - Hidden on mobile (visible only on md screens and up) -->
+      <div class="d-none d-md-flex align-items-center">
+        <!-- Request Button -->
+        <button type="button" class="btn btn-danger me-3" data-bs-toggle="modal" data-bs-target="#siteVisitModal">
+          REQUEST A SITE VISIT
+        </button>
+        
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Site Visit Modal -->
+  <div class="modal fade" id="siteVisitModal" tabindex="-1" aria-labelledby="siteVisitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content contact-modal">
+        <div class="modal-header">
+          <h5 class="modal-title" id="siteVisitModalLabel">Request A Site Visit</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="visitForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Full Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Your Contact No</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Your Contact No." required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <label for="messa ge" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Enter message..."></textarea>
+            </div>
+            <button type="submit" class=" btn btn-danger w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1 data-aos="fade-up">About Us</h1>
+        <p data-aos="fade-up" data-aos-delay="300">Building Excellence Since 2010</p>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Story</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="../images/about-us.jpg" alt="Construction site">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <span class="year-badge">Since 2010</span>
+                    <h3>Building The Future Together</h3>
+                    <p>Founded in 2010, Your Construction has grown from a small family business into one of the region's most trusted construction companies. With over 15 years of experience, we've built our reputation on quality craftsmanship, timely project completion, and exceptional customer service.</p>
+                    <p>Our team of skilled professionals is dedicated to turning your vision into reality. Whether it's a residential renovation, commercial construction, or industrial project, we approach each job with the same level of commitment and attention to detail.</p>
+                    <p>At Your Construction, we believe in building relationships as strong as our structures. Many of our clients have been with us for decades, trusting us with multiple projects over the years. We're not just contractors; we're partners in your success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision" id="mission-vision">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Mission & Vision</h2>
+    <div class="mission-vision-content">
+      <div class="mission-vision-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <p>To deliver exceptional construction services that exceed our clients' expectations.</p>
+          </div>
+          <div class="card-back">
+            <h3>Our Mission</h3>
+            <p>Our mission at Pinnacle Construction is to deliver exceptional residential and commercial spaces that exceed client expectations in quality, design, and value. We are committed to using cutting-edge technology, premium materials, and skilled craftsmanship to ensure every project stands the test of time. With a focus on transparency, customer satisfaction, and timely delivery, we strive to build lasting relationships and contribute meaningfully to the growth of communities we serve.</p>
+          </div>
+        </div>
+      </div>
+      <div class="mission-vision-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-icon"><i class="fas fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>To be the premier construction company in the region, recognized for excellence.</p>
+          </div>
+          <div class="card-back">
+            <h3>Our Vision</h3>
+            <p>At Pinnacle Construction, our vision is to shape the future of modern living by delivering thoughtfully designed spaces that inspire trust, comfort, and pride. We aim to redefine urban landscapes through innovative architecture, uncompromised quality, and sustainable practices. Our goal is not just to build structures, but to create vibrant communities where people thrive. With every project, we move one step closer to becoming a symbol of excellence and reliability in the construction industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Counter Section -->
+    <section class="counter-section" id="counter">
+        <div class="container">
+            <div class="counter-container">
+                <div class="counter-item" data-aos="fade-up">
+                    <div class="counter-value" data-target="12">0</div>
+                    <div class="counter-label">Projects Completed</div>
+                </div>
+                <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-value" data-target="300">0</div>
+                    <div class="counter-label">Happy Clients</div>
+                </div>
+                <div class="counter-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="counter-value" data-target="50">0</div>
+                    <div class="counter-label">Team Members</div>
+                </div>
+                <div class="counter-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="counter-value" data-target="15">0</div>
+                    <div class="counter-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+            <div class="features">
+                <div class="feature" data-aos="zoom-in" data-aos-duration="800">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Quality Craftsmanship</h3>
+                    <p>Our skilled team delivers exceptional workmanship on every project, big or small, ensuring lasting quality.</p>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Transparent Process</h3>
+                    <p>We keep you informed at every stage with clear communication and no surprises throughout the project.</p>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Practices</h3>
+                    <p>We're committed to environmentally responsible construction methods and materials for a greener future.</p>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>On-Time Delivery</h3>
+                    <p>We respect deadlines and work efficiently to complete projects on schedule, every time.</p>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer fair, transparent pricing without compromising on quality or cutting corners.</p>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Licensed & Insured</h3>
+                    <p>Full compliance with industry regulations and comprehensive insurance coverage for your peace of mind.</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+        <!-- Footer Section -->
+    <footer class="footer foot" id="footer">
+      <div class="wave-container">
+          <div class="wave">
+              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                  preserveAspectRatio="none">
+                  <path
+                      d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                      class="shape-fill"></path>
+              </svg>
+          </div>
+      </div>
+
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="100">
+                          <div class="footer-logo">
+                              <img src="../images/logo1.png" alt="Logo">
+                          </div>
+                          <p class="footer-text">We build more than just structures - we build your dreams into reality
+                              with precision, innovation, and unmatched craftsmanship.</p>
+                          <div class="social-links">
+                              <a href="#" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                              <a href="#" id="instagram"><i class="fab fa-instagram"></i></a>
+                              <a href="#" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="200">
+                          <h3 class="footer-heading">Quick Links</h3>
+                          <ul class="footer-links">
+                              <li><a href="#">About Us</a></li>
+                              <li><a href="#Service">Our Services</a></li>
+                              <li><a href="#projects">Our Projects</a></li>
+                              <li><a href="#testimonials">Testimonials</a></li>
+                              <li><a href="./contact.html">Contact Us</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="300">
+                          <h3 class="footer-heading">Services</h3>
+                          <ul class="footer-links">
+                              <li><a href="#">Residential Construction</a></li>
+                              <li><a href="#">Commercial Buildings</a></li>
+                              <li><a href="#">Redevelopment projects</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-col">
+                      <div class="footer-widget" data-animation="fadeInUp" data-delay="400">
+                          <h3 class="footer-heading">Contact Info</h3>
+                          <ul class="footer-contact-info">
+                              <li>
+                                  <i class="fas fa-map-marker-alt icons"></i>
+                                  <span>PINNACLE CONSTRUCTION, MULIK COMPLEX, FLAT NO- A/1, NEAR AIRPORT CENTRE
+                                      POINT,WARDHA ROAD, SOMALWADA, NAGPUR.</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-phone-alt icons"></i>
+                                  <span>+91 7770020599 <br>+91 7775947600</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-envelope icons"></i>
+                                  <span>Pinnacleconstruction03@gmail.com</span>
+                              </li>
+                              <li>
+                                  <i class="fas fa-clock icons"></i>
+                                  <span>Mon - sat: 10:00 AM - 7:00 PM</span>
+                              </li>
+                          </ul>
+
+                          <div class="newsletter-form">
+                              <input type="email" class="newsletter-input" placeholder="Your email address">
+                              <button type="submit" class="newsletter-btn">
+                                  <i class="fas fa-paper-plane"></i>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="footer-divider"></div>
+
+              <div class="row">
+                  <div class="col-md-6">
+                      <p class="copyright">© 2025 CapturousInfotech. All Rights Reserved.</p>
+                  </div>
+                  <div class="col-md-6 text-md-end">
+                      <p class="copyright">
+                          <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-right: 15px;">Privacy
+                              Policy</a>
+                          <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms of Service</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/917770020599" class="whatsapp-button" id="whatsapp">
+      <i class="bi bi-whatsapp"></i>
+  </a>
+    <!-- Scripts -->
+ <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>    <script>
+
+        // popup form
+document.addEventListener('DOMContentLoaded', function() {
+  const visitForm = document.getElementById('visitForm');
+  if (visitForm) {
+    visitForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      
+      // Better validation
+      if (!name) {
+        alert('Please enter your name');
+        return;
+      }
+      
+      if (!phone) {
+        alert('Please enter your phone number');
+        return;
+      }
+      
+      if (!email) {
+        alert('Please enter your email');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      // Phone validation - basic check for numbers only
+      const phoneRegex = /^\d{10,15}$/;
+      if (!phoneRegex.test(phone.replace(/[- ]/g, ''))) {
+        alert('Please enter a valid phone number');
+        return;
+      }
+      
+      // If we get here, form is valid
+      alert('Thank you! Your site visit request has been submitted.');
+      this.reset();
+      
+      // Close the modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('siteVisitModal'));
+      if (modal) {
+        modal.hide();
+      }
+    });
+  }
+});
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease',
+                once: true,
+                offset: 100
+            });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Counter animation
+            const counterSection = document.getElementById('counter');
+            const counterValues = document.querySelectorAll('.counter-value');
+            let counted = false;
+            
+            function startCounting() {
+                if (counted) return;
+                
+                counterValues.forEach(counter => {
+                    const target = +counter.dataset.target;
+                    let count = 0;
+                    const increment = target / 100;
+                    const duration = 2000; // 2 seconds
+                    const intervalTime = duration / 100;
+                    
+                    const updateCount = setInterval(() => {
+                        count += increment;
+                        counter.innerText = Math.ceil(count);
+                        
+                        if (count >= target) {
+                            counter.innerText = target;
+                            clearInterval(updateCount);
+                        }
+                    }, intervalTime);
+                });
+                
+                counted = true;
+            }
+            
+            // Start counter when scrolled into view
+            window.addEventListener('scroll', function() {
+                if (counterSection && isElementInViewport(counterSection)) {
+                    startCounting();
+                }
+            });
+            
+            // Check if element is in viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Testimonial slider
+            const testimonialSlider = document.querySelector('.testimonial-slider');
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            
+            testimonialDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = this.dataset.index;
+                    
+                    // Update active dot
+                    testimonialDots.forEach(d => d.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Move slider
+                    testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+                });
+            });
+            
+            // Auto slide testimonials
+            let currentSlide = 0;
+            const slideCount = testimonialDots.length;
+            
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slideCount;
+                
+                // Update active dot
+                testimonialDots.forEach(d => d.classList.remove('active'));
+                testimonialDots[currentSlide].classList.add('active');
+                
+                // Move slider
+                testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }, 5000);
+        });
+
+
+               //footer section
+        document.addEventListener("DOMContentLoaded", function () {
+          // Footer animation
+          const footerWidgets = document.querySelectorAll('.footer-widget');
+          
+          function animateFooterWidgets() {
+              footerWidgets.forEach((widget, index) => {
+                  const delay = widget.getAttribute('data-delay') || 100 * index;
+                  const animation = widget.getAttribute('data-animation') || 'fadeInUp';
+                  
+                  setTimeout(() => {
+                      widget.classList.add('animated', animation);
+                  }, delay);
+              });
+          }
+          
+          // Back to top button functionality
+          const backToTopButton = document.querySelector('.back-to-top');
+          
+          function toggleBackToTopButton() {
+              if (window.scrollY > 300) {
+                  backToTopButton.classList.add('visible');
+              } else {
+                  backToTopButton.classList.remove('visible');
+              }
+          }
+          
+          backToTopButton.addEventListener('click', () => {
+              window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+              });
+          });
+          
+          // Handle scroll events
+          window.addEventListener('scroll', toggleBackToTopButton);
+          
+          // Animation on scroll
+          const animateElements = document.querySelectorAll('.animate-in');
+          
+          function checkIfInView() {
+              animateElements.forEach(element => {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const windowHeight = window.innerHeight;
+                  
+                  if (elementTop < windowHeight - 100) {
+                      element.classList.add('visible');
+                  }
+              });
+          }
+          
+          // Intersection Observer for footer animations
+          const footerObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      animateFooterWidgets();
+                      footerObserver.unobserve(entry.target);
+                  }
+              });
+          }, { threshold: 0.1 });
+          
+          const footer = document.getElementById('footer');
+          if (footer) {
+              footerObserver.observe(footer);
+          }
+          
+          // Social links hover effects
+          const socialLinks = document.querySelectorAll('.social-links a');
+          
+          socialLinks.forEach(link => {
+              link.addEventListener('mouseenter', function() {
+                  this.classList.add('pulse');
+              });
+              
+              link.addEventListener('mouseleave', function() {
+                  this.classList.remove('pulse');
+              });
+          });
+          
+          // Newsletter form submission
+          const newsletterForm = document.querySelector('.newsletter-form');
+          const newsletterInput = document.querySelector('.newsletter-input');
+          
+          if (newsletterForm) {
+              newsletterForm.addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  
+                  const email = newsletterInput.value.trim();
+                  
+                  if (email.length > 0 && /^\S+@\S+\.\S+$/.test(email)) {
+                      // Success message with Bootstrap toast
+                      const successToast = document.createElement('div');
+                      successToast.className = 'position-fixed bottom-0 end-0 p-3';
+                      successToast.style.zIndex = '1050';
+                      successToast.innerHTML = `
+                          <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-header bg-success text-white">
+                                  <strong class="me-auto">Success!</strong>
+                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                              </div>
+                              <div class="toast-body">
+                                  Thank you for subscribing to our newsletter!
+                              </div>
+                          </div>
+                      `;
+                      document.body.appendChild(successToast);
+                      
+                      // Remove toast after 3 seconds
+                      setTimeout(() => {
+                          successToast.remove();
+                      }, 3000);
+                      
+                      newsletterInput.value = '';
+                  } else {
+                      // Error message with Bootstrap toast
+                      const errorToast = document.createElement('div');
+                      errorToast.className = 'position-fixed bottom-0 end-0 p-3';
+                      errorToast.style.zIndex = '1050';
+                      errorToast.innerHTML = `
+                          <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-header bg-danger text-white">
+                                  <strong class="me-auto">Error</strong>
+                                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                              </div>
+                              <div class="toast-body">
+                                  Please enter a valid email address.
+                              </div>
+                          </div>
+                      `;
+                      document.body.appendChild(errorToast);
+                      
+                      // Remove toast after 3 seconds
+                      setTimeout(() => {
+                          errorToast.remove();
+                      }, 3000);
+                  }
+              });
+          }
+          
+          // Add smooth scrolling to all links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  
+                  const targetId = this.getAttribute('href');
+                  
+                  if (targetId !== '#') {
+                      const targetElement = document.querySelector(targetId);
+                      
+                      if (targetElement) {
+                          targetElement.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start'
+                          });
+                      }
+                  }
+              });
+          });
+          
+          // Initialize functionality
+          toggleBackToTopButton();
+          checkIfInView();
+          
+          // Re-check on scroll
+          window.addEventListener('scroll', checkIfInView);
+      });
+
+
+  document.querySelectorAll('.mission-vision-card').forEach(card => {
+    card.addEventListener('click', function () {
+      // Only enable tap flip on mobile/tablet
+      if (window.innerWidth <= 991) {
+        this.classList.toggle('flipped');
+      }
+    });
+  });
+
+
+
+
+    </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.mission-vision-card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', function () {
+        // Toggle the 'flipped' class on click
+        this.classList.toggle('flipped');
+      });
+    });
+  });
+</script>
+</body>
+</html>
